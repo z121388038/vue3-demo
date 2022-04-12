@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p @click="changeName" :title="name">{{ name }}</p>
+    <el-button>element plus</el-button>
     <ul>
       <li v-for="item in list" :key="item.name">
         {{ item.name }}--{{ item.age }}
