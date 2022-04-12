@@ -14,7 +14,7 @@ export default defineComponent({
     msg: String,
   },
   setup() {
-    let name = ref("zhangsan");
+    let name = ref("zhangsan222");
 
     const changeName = () => {
       name.value = "lisi";
