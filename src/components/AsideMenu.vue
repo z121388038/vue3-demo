@@ -64,10 +64,10 @@ export default defineComponent({
   },
   methods: {
     handleOpen: (key: string, keyPath: string[]) => {
-      // console.log(key, keyPath);
+      console.log(key, keyPath);
     },
     handleClose: (key: string, keyPath: string[]) => {
-      // console.log(key, keyPath);
+      console.log(key, keyPath);
     },
     goNext(info: { name: string; path: string }) {
       this.$router.push(info.path);
