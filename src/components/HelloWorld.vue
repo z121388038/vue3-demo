@@ -36,6 +36,9 @@ export default defineComponent({
     };
     return { name, changeName };
   },
+  created() {
+    // console.log(this.$router.getRoutes());
+  },
 });
 </script>
 
