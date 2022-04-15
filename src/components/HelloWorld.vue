@@ -1,13 +1,17 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p @click="changeName" :title="name">{{ name }}</p>
-    <el-button>element plus</el-button>
+    <p @click="changeName" :title="name">
+      {{ name }}sadfasdfsa撒旦发射点发asdfsa撒旦发射点发asdfsa撒旦发射点发
+    </p>
     <ul>
       <li v-for="item in list" :key="item.name">
         {{ item.name }}--{{ item.age }}
       </li>
     </ul>
+    <el-button @click="click1($event), click2($event)">
+      click 多事件处理器
+    </el-button>
   </div>
 </template>
 
@@ -38,6 +42,14 @@ export default defineComponent({
   },
   created() {
     // console.log(this.$router.getRoutes());
+  },
+  methods: {
+    click1(event: any) {
+      console.log("click1", event);
+    },
+    click2(event: any) {
+      console.log("click2", event);
+    },
   },
 });
 </script>
