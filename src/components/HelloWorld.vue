@@ -12,6 +12,32 @@
     <el-button @click="click1($event), click2($event)">
       click 多事件处理器
     </el-button>
+
+    <form @submit.prevent="onSubmit">
+      <button>asdfadf</button>
+    </form>
+
+    <div @click.capture="capture('capture1')">
+      <div @click.capture="capture('capture2')">
+        <div @click.self="capture('capture3')">
+          <div @click.capture="capture('capture4')">capture</div>
+        </div>
+      </div>
+    </div>
+
+    <input @keydown.tab="submit" />
+    <input @keyup.enter="submit" />
+    <div @click.right.prevent="submit">禁止鼠标右键默认事件</div>
+    <input @keyup.alt.enter="submit" />
+    <div @click.ctrl.alt="submit">Do something</div>
+
+    <div @click="onStop(1)">
+      <div @click="onStop(2)">
+        <div @click.stop="onStop(3)">.stop</div>
+      </div>
+    </div>
+
+    <a href="https://www.baidu.com">百度</a>
   </div>
 </template>
 
@@ -42,13 +68,27 @@ export default defineComponent({
   },
   created() {
     // console.log(this.$router.getRoutes());
+    console.log("props", this.$props);
+    console.log("$attrs", this.$attrs);
   },
   methods: {
-    click1(event: any) {
+    click1(event: object) {
       console.log("click1", event);
     },
-    click2(event: any) {
+    click2(event: object) {
       console.log("click2", event);
+    },
+    onSubmit() {
+      console.log("form onSubmit");
+    },
+    capture(text: string) {
+      console.log(text || "capture");
+    },
+    submit() {
+      console.log(1111);
+    },
+    onStop(text: number) {
+      console.log(text);
     },
   },
 });
