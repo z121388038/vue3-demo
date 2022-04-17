@@ -1,5 +1,5 @@
 <template>
-  <el-card>
+  <el-card header="这是测试Props相关的组件">
     <el-alert
       description="注意 prop 会在一个组件实例创建之前进行验证，所以实例的 property (如data、computed 等) 在 default 或 validator 函数中是不可用的。"
       type="success"
