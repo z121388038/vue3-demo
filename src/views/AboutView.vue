@@ -13,8 +13,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import TestObjectProps from "./components/TestObjectProps";
-import TestAttr from "./components/TestAttr";
+import TestObjectProps from "./components/TestObjectProps.vue";
+import TestAttr from "./components/TestAttr.vue";
 import Persion from "@/views/Persion";
 
 export default defineComponent({
@@ -31,7 +31,7 @@ export default defineComponent({
     };
   },
   methods: {
-    myClick(e) {
+    myClick(e: { target: { value: never } }) {
       console.log("fu click", e.target.value);
     },
   },

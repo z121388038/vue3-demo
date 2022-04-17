@@ -5,13 +5,16 @@
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
     AsideMenu: typeof import("./src/components/AsideMenu.vue")["default"];
+    ElAlert: typeof import("element-plus/es")["ElAlert"];
     ElAside: typeof import("element-plus/es")["ElAside"];
     ElButton: typeof import("element-plus/es")["ElButton"];
+    ElCard: typeof import("element-plus/es")["ElCard"];
     ElContainer: typeof import("element-plus/es")["ElContainer"];
     ElIcon: typeof import("element-plus/es")["ElIcon"];
     ElMain: typeof import("element-plus/es")["ElMain"];
     ElMenu: typeof import("element-plus/es")["ElMenu"];
     ElMenuItem: typeof import("element-plus/es")["ElMenuItem"];
+    ElSubMenu: typeof import("element-plus/es")["ElSubMenu"];
     HelloWorld: typeof import("./src/components/HelloWorld.vue")["default"];
     RouterLink: typeof import("vue-router")["RouterLink"];
     RouterView: typeof import("vue-router")["RouterView"];

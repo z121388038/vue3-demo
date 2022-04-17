@@ -16,15 +16,31 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/AboutView.vue"),
   },
   {
-    path: "/component-v-model",
-    name: "自定义组件使用v-model",
-    component: () => import("@/views/component-v-model/index.vue"),
+    path: "/component-info",
+    name: "深入组件",
+    component: () => import("@/views/component-info/index.vue"),
+    redirect: "/component-info/home",
+    children: [
+      {
+        path: "/home",
+        name: "首页",
+        component: () => import("@/views/component-info/index.vue"),
+      },
+    ],
   },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
+  routes: routes.map((item) => {
+    if (item.children) {
+      item.children.map((item2) => {
+        item2.path = `${item.path}${item2.path}`;
+        return item2;
+      });
+    }
+    return item;
+  }),
 });
 
 export default router;

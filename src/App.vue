@@ -1,18 +1,13 @@
 <template>
   <div class="common-layout">
-    <el-container>
-      <!--      <el-header>Header</el-header>-->
-      <el-container>
-        <el-aside width="200px">
-          <AsideMenu></AsideMenu>
-          <!--          <router-link to="/">Home</router-link> |-->
-          <!--          <router-link to="/about">About</router-link>-->
-        </el-aside>
-        <el-main>
-          <router-view />
-        </el-main>
-      </el-container>
-    </el-container>
+    <div class="aside-wrap">
+      <AsideMenu></AsideMenu>
+    </div>
+    <div class="main-wrap">
+      <div class="main">
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -30,7 +25,18 @@ export default defineComponent({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  font-size: 12px;
+}
+.aside-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #545c64;
+  height: 100%;
+  width: 200px;
+}
+.main-wrap {
+  padding: 10px 10px 10px 210px;
 }
 </style>
