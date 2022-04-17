@@ -5,11 +5,7 @@
     <div>
       <p>v-model子组件title：{{ title }}</p>
       <p>v-model子组件age：{{ age }}</p>
-      <input
-        type="text"
-        :value="title"
-        @input="$emit('update:title', $event.target.value)"
-      />
+      <input type="text" :value="title" @input="titleEmit" />
       <input
         type="number"
         :value="age"
@@ -24,6 +20,9 @@ export default {
   name: "ComponentEmit",
   props: {
     title: String,
+    titleModifiers: {
+      default: () => ({}),
+    },
     age: Number,
   },
   emits: {
@@ -33,6 +32,13 @@ export default {
     "update:age": null,
   },
   methods: {
+    titleEmit(event) {
+      let value = event.target.value;
+      if (this.titleModifiers.capitalize) {
+        value = `${value.charAt(0).toUpperCase()}${value.substring(1)}`;
+      }
+      this.$emit("update:title", value);
+    },
     onClick() {
       this.$emit("myClick", { info: "myclick msg" });
     },

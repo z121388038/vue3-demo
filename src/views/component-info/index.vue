@@ -10,7 +10,7 @@
   <ComponentEmit
     @my-click="emitClick"
     @click-required="emitClickRequired"
-    v-model:title="title"
+    v-model:title.capitalize="title"
     v-model:age.number="age"
   ></ComponentEmit>
   <div>v-model父组件title: {{ title }}</div>
