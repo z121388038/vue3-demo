@@ -1,7 +1,7 @@
 class Persion {
   name: string;
   constructor() {
-    this.name = "张三";
+    this.name = '张三';
   }
 }
 

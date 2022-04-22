@@ -12,10 +12,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import TestObjectProps from "./components/TestObjectProps.vue";
-import TestAttr from "./components/TestAttr.vue";
-import Persion from "@/views/Persion";
+import { defineComponent } from 'vue';
+import TestObjectProps from './components/TestObjectProps.vue';
+import TestAttr from './components/TestAttr.vue';
+import Persion from '@/views/Persion';
 
 export default defineComponent({
   components: {
@@ -32,7 +32,7 @@ export default defineComponent({
   },
   methods: {
     myClick(e: { target: { value: never } }) {
-      console.log("fu click", e.target.value);
+      console.log('fu click', e.target.value);
     },
   },
 });

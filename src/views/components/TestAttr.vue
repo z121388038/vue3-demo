@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "TestAttr",
+  name: 'TestAttr',
   // inheritAttrs: false,
   props: {
     name: String,

@@ -6,18 +6,14 @@
       <p>v-model子组件title：{{ title }}</p>
       <p>v-model子组件age：{{ age }}</p>
       <input type="text" :value="title" @input="titleEmit" />
-      <input
-        type="number"
-        :value="age"
-        @input="$emit('update:age', $event.target.value)"
-      />
+      <input type="number" :value="age" @input="$emit('update:age', $event.target.value)" />
     </div>
   </el-card>
 </template>
 
 <script>
 export default {
-  name: "ComponentEmit",
+  name: 'ComponentEmit',
   props: {
     title: String,
     titleModifiers: {
@@ -28,8 +24,8 @@ export default {
   emits: {
     myClick: null,
     clickRequired: ({ age }) => age > 10 && age < 20,
-    "update:title": null,
-    "update:age": null,
+    'update:title': null,
+    'update:age': null,
   },
   methods: {
     titleEmit(event) {
@@ -37,13 +33,13 @@ export default {
       if (this.titleModifiers.capitalize) {
         value = `${value.charAt(0).toUpperCase()}${value.substring(1)}`;
       }
-      this.$emit("update:title", value);
+      this.$emit('update:title', value);
     },
     onClick() {
-      this.$emit("myClick", { info: "myclick msg" });
+      this.$emit('myClick', { info: 'myclick msg' });
     },
     clickRequired() {
-      this.$emit("clickRequired", { info: "clickRequired", age: 12 });
+      this.$emit('clickRequired', { info: 'clickRequired', age: 12 });
     },
   },
 };

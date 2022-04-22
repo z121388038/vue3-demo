@@ -9,16 +9,14 @@
     <div>组件文案的颜色是通过父组件的style改变的</div>
     <div>这些是非props的attr: {{ $.attrs }}</div>
     <div :="$attrs">
-      不是在props定义的 attribute
-      可以通过$.attrs获取到，并且这些属性默认添加到组件根节点的 attribute 上面
+      不是在props定义的 attribute 可以通过$.attrs获取到，并且这些属性默认添加到组件根节点的
+      attribute 上面
     </div>
     <div :="$attrs">
-      组件添加 inheritAttrs: false，这样就可以让父组件的 attribute
-      不添加到组件根节点的 attribute 上面了
+      组件添加 inheritAttrs: false，这样就可以让父组件的 attribute 不添加到组件根节点的 attribute
+      上面了
     </div>
-    <div :="$attrs">
-      可以通过 :="$attrs" 把这些 attribute 添加到需要的标签上面
-    </div>
+    <div :="$attrs">可以通过 :="$attrs" 把这些 attribute 添加到需要的标签上面</div>
     <div :="$attrs">
       如果一个组件存在多个根节点，默认也不会添加 attribute
       上面，需要手动绑定(:="$attrs")到需要的标签上面
@@ -33,7 +31,7 @@
 
 <script>
 export default {
-  name: "ComponentLocal",
+  name: 'ComponentLocal',
   inheritAttrs: false,
   props: {
     msg: {

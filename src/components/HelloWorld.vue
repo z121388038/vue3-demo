@@ -5,13 +5,9 @@
       {{ name }}sadfasdfsa撒旦发射点发asdfsa撒旦发射点发asdfsa撒旦发射点发
     </p>
     <ul>
-      <li v-for="item in list" :key="item.name">
-        {{ item.name }}--{{ item.age }}
-      </li>
+      <li v-for="item in list" :key="item.name">{{ item.name }}--{{ item.age }}</li>
     </ul>
-    <el-button @click="click1($event), click2($event)">
-      click 多事件处理器
-    </el-button>
+    <el-button @click="click1($event), click2($event)"> click 多事件处理器 </el-button>
 
     <form @submit.prevent="onSubmit">
       <button>asdfadf</button>
@@ -42,47 +38,47 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: {
     msg: String,
   },
   data() {
     return {
       list: [
-        { name: "张三", age: 25 },
-        { name: "张三22", age: 252 },
-        { name: "张三22", age: 2533 },
+        { name: '张三', age: 25 },
+        { name: '张三22', age: 252 },
+        { name: '张三22', age: 2533 },
       ],
     };
   },
   setup() {
-    let name = ref("zhangsan222");
+    let name = ref('zhangsan222');
 
     const changeName = () => {
-      name.value = "lisi";
+      name.value = 'lisi';
     };
     return { name, changeName };
   },
   created() {
     // console.log(this.$router.getRoutes());
-    console.log("props", this.$props);
-    console.log("$attrs", this.$attrs);
+    console.log('props', this.$props);
+    console.log('$attrs', this.$attrs);
   },
   methods: {
     click1(event: object) {
-      console.log("click1", event);
+      console.log('click1', event);
     },
     click2(event: object) {
-      console.log("click2", event);
+      console.log('click2', event);
     },
     onSubmit() {
-      console.log("form onSubmit");
+      console.log('form onSubmit');
     },
     capture(text: string) {
-      console.log(text || "capture");
+      console.log(text || 'capture');
     },
     submit() {
       console.log(1111);

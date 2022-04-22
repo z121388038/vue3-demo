@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import AsideMenu from "@/components/AsideMenu.vue";
+import { defineComponent } from 'vue';
+import AsideMenu from '@/components/AsideMenu.vue';
 
 export default defineComponent({
   components: { AsideMenu },

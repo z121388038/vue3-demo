@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import Persion from "@/views/Persion";
+import Persion from '@/views/Persion';
 
 export default {
-  name: "TestObjectProps",
+  name: 'TestObjectProps',
   props: {
     name: Persion,
     age: Number,

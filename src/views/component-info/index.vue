@@ -30,9 +30,7 @@
       <el-card>
         <ComponentSlot>
           <template #slot1="parentSlotInfo1">
-            <p style="color: cornflowerblue">
-              父组件slot内容--{{ parentSlotInfo1 }}
-            </p>
+            <p style="color: cornflowerblue">父组件slot内容--{{ parentSlotInfo1 }}</p>
           </template>
           <p style="color: cornflowerblue">父组件slot内容2222</p>
         </ComponentSlot>
@@ -44,9 +42,7 @@
         <ComponentProvide></ComponentProvide>
         <el-button @click="changeUsers">change users -- {{ title }}</el-button>
         <ul>
-          <li v-for="user in users" :key="user.name">
-            {{ user.name }} -- {{ user.age }}
-          </li>
+          <li v-for="user in users" :key="user.name">{{ user.name }} -- {{ user.age }}</li>
         </ul>
       </el-card>
     </el-collapse-item>
@@ -67,19 +63,17 @@
 </template>
 
 <script>
-import { computed, defineAsyncComponent } from "vue";
-import { ElMessage } from "element-plus";
+import { defineAsyncComponent } from 'vue';
+import { ElMessage } from 'element-plus';
 // import ComponentLocal from "./components/ComponentLocal.vue";
-import ComponentEmit from "./components/ComponentEmit.vue";
-import ComponentSlot from "./components/ComponentSlot.vue";
-import ComponentProvide from "./components/ComponentProvide.vue";
+import ComponentEmit from './components/ComponentEmit.vue';
+import ComponentSlot from './components/ComponentSlot.vue';
+import ComponentProvide from './components/ComponentProvide.vue';
 
 export default {
-  name: "ComponentInfoIndex",
+  name: 'ComponentInfoIndex',
   components: {
-    ComponentLocal: defineAsyncComponent(() =>
-      import("./components/ComponentLocal.vue")
-    ),
+    ComponentLocal: defineAsyncComponent(() => import('./components/ComponentLocal.vue')),
     ComponentEmit,
     ComponentSlot,
     ComponentProvide,
@@ -87,25 +81,25 @@ export default {
   provide() {
     return {
       users: this.users,
-      title: computed(() => this.title),
+      title: this.title,
     };
   },
   data() {
     return {
       radioValue: 2,
-      title: "张三",
+      title: '张三',
       age: 25,
       users: [
-        { name: "张三", age: 25 },
-        { name: "李四", age: 26 },
-        { name: "王二", age: 277 },
-        { name: "曹五", age: 2325 },
+        { name: '张三', age: 25 },
+        { name: '李四', age: 26 },
+        { name: '王二', age: 277 },
+        { name: '曹五', age: 2325 },
       ],
     };
   },
   computed: {
     currentTabComponent() {
-      const arr = ["ComponentEmit", "ComponentSlot", "ComponentProvide"];
+      const arr = ['ComponentEmit', 'ComponentSlot', 'ComponentProvide'];
       return arr[this.radioValue - 1];
     },
   },
@@ -113,23 +107,23 @@ export default {
     attrClick({ target }) {
       ElMessage({
         message: `这是通过attr触发的，选中的值是：${target.value}`,
-        type: "warning",
+        type: 'warning',
       });
     },
     emitClick(info) {
       ElMessage({
         message: `这是子组件emit过来的：${JSON.stringify(info)}`,
-        type: "warning",
+        type: 'warning',
       });
     },
     emitClickRequired(info) {
       ElMessage({
         message: `这是子组件emit过来的：${JSON.stringify(info)}`,
-        type: "warning",
+        type: 'warning',
       });
     },
     changeUsers() {
-      this.users.push({ name: "sadf", age: 2 });
+      this.users.push({ name: 'sadf', age: 2 });
       this.title = `change title ${new Date().getTime()}`;
     },
   },

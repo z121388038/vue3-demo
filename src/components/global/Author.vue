@@ -4,10 +4,10 @@
 
 <script>
 export default {
-  name: "GlobalAuthor",
+  name: 'GlobalAuthor',
   data() {
     return {
-      author: "Memory",
+      author: 'Memory',
     };
   },
 };

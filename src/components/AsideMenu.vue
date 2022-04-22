@@ -34,14 +34,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 interface DefaultData {
   routeList: object[];
 }
 
 export default defineComponent({
-  name: "AsideMenu",
+  name: 'AsideMenu',
   data(): DefaultData {
     return {
       routeList: [],
