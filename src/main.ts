@@ -16,4 +16,5 @@ for (const [iconName, iconComponent] of Object.entries(ELIcons)) {
 // 注册全局组件
 app.component('GlobalAuthor', GlobalAuthor);
 
+// console.log(111, app.component('GlobalAuthor', 'directive'));
 app.use(store).use(router).mount('#app');

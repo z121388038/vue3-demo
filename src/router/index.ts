@@ -22,6 +22,16 @@ const routes: Array<RouteRecordRaw> = [
     name: '组合式api',
     component: () => import('@/views/Setup.vue'),
   },
+  {
+    path: '/life-cycle',
+    name: '生命周期',
+    component: () => import('@/views/life-cycle/LifeCycle.vue'),
+  },
+  {
+    path: '/directive',
+    name: '自定义指令',
+    component: () => import('@/views/Directive.vue'),
+  },
 ];
 
 const router = createRouter({

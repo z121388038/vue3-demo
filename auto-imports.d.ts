@@ -12,5 +12,6 @@ declare global {
   const ElRadioButton: typeof import('element-plus/es')['ElRadioButton'];
   const ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup'];
   const ElSubMenu: typeof import('element-plus/es')['ElSubMenu'];
+  const ElTag: typeof import('element-plus/es')['ElTag'];
 }
 export {};
