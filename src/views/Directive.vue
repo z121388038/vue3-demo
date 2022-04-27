@@ -8,12 +8,13 @@
   <p v-bind:title="directiveList[4]">v-bind</p>
   <input type="text" placeholder="v-model" v-model="directiveList[5]" />
   <p v-pre>{{ asadfasdf }}</p>
-  <p v-debounce="click">v-is: 3.1.0已弃用，请换用带有 vue: 前缀的 is attribute。</p>
+  <p v-debounce="click" v-background="'#4598d2'">
+    v-is: 3.1.0已弃用，请换用带有 vue: 前缀的 is attribute。
+  </p>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-
 const directiveList = ref([
   'v-if',
   'v-else',
