@@ -5,6 +5,10 @@
     }}</el-tag>
   </el-card>
   <div v-html="vHtml"></div>
+  <p v-bind:title="directiveList[4]">v-bind</p>
+  <input type="text" placeholder="v-model" v-model="directiveList[5]" />
+  <p v-pre>{{ asadfasdf }}</p>
+  <p v-debounce="click">v-is: 3.1.0已弃用，请换用带有 vue: 前缀的 is attribute。</p>
 </template>
 
 <script lang="ts" setup>
@@ -29,6 +33,7 @@ const directiveList = ref([
   'v-cloak',
 ] as string[]);
 const vHtml = ref('<h3>这是<span style="color: red;">v-html</span></h3>');
+const click = () => console.log(new Date().getTime());
 </script>
 
 <style scoped lang="scss"></style>
