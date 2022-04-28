@@ -9,18 +9,6 @@
     </ul>
   </el-card>
 
-  <el-card style="margin-top: 10px">
-    <div v-html="vHtml"></div>
-    <p v-bind:title="directiveList[4]">v-bind</p>
-    <input type="text" placeholder="v-model" v-model="directiveList[5]" />
-    <p v-pre>{{ asadfasdf }}</p>
-    <p>v-is: 3.1.0已弃用，请换用带有 vue: 前缀的 is attribute。</p>
-    <el-button v-debounce="click">这里是防抖指令，快速点击试试:{{ debounceText }}</el-button>
-    <el-button v-background="background" style="color: white" @click="changeBackground">
-      这里是设置背景色指令：{{ background }}
-    </el-button>
-  </el-card>
-
   <el-card header="有哪些钩子" style="margin-top: 10px">
     <el-button @click="showHook = !showHook">自己先想想指令有哪些钩子，再点击看对不对</el-button>
     <el-input style="margin-top: 10px" v-model="myHooks" placeholder="请输入你想的钩子" />
@@ -33,15 +21,51 @@
     </ul>
   </el-card>
 
+  <el-card style="margin-top: 10px" header="自定义指令">
+    <el-button v-debounce="click">这里是防抖指令，快速点击试试:{{ debounceText }}</el-button>
+    <el-button v-background="background" style="color: white" @click="changeBackground">
+      这里是设置背景色指令：{{ background }}
+    </el-button>
+  </el-card>
+
   <el-card header="16个内置指令示例" style="margin-top: 10px">
     <el-collapse>
-      <el-collapse-item title="v-text示例"><VText></VText></el-collapse-item>
-      <el-collapse-item title="v-html示例"><VHtml></VHtml></el-collapse-item>
-      <el-collapse-item title="v-pre示例"><VPre></VPre></el-collapse-item>
-      <el-collapse-item title="v-show示例"><VShow></VShow></el-collapse-item>
-      <el-collapse-item title="v-for示例"><VFor></VFor></el-collapse-item>
-      <el-collapse-item title="v-once示例"><VOnce></VOnce></el-collapse-item>
-      <el-collapse-item title="v-mome示例"><VMemo></VMemo></el-collapse-item>
+      <el-collapse-item title="v-text示例">
+        <VText></VText>
+      </el-collapse-item>
+      <el-collapse-item title="v-html示例">
+        <VHtml></VHtml>
+      </el-collapse-item>
+      <el-collapse-item title="v-pre示例">
+        <VPre></VPre>
+      </el-collapse-item>
+      <el-collapse-item title="v-show示例">
+        <VShow></VShow>
+      </el-collapse-item>
+      <el-collapse-item title="v-for示例">
+        <VFor></VFor>
+      </el-collapse-item>
+      <el-collapse-item title="v-once示例">
+        <VOnce></VOnce>
+      </el-collapse-item>
+      <el-collapse-item title="v-mome示例">
+        <VMemo></VMemo>
+      </el-collapse-item>
+      <el-collapse-item title="v-model示例">
+        <VModel></VModel>
+      </el-collapse-item>
+      <el-collapse-item title="v-on示例">
+        <VOn></VOn>
+      </el-collapse-item>
+      <el-collapse-item title="v-bind示例">
+        <VBind></VBind>
+      </el-collapse-item>
+      <el-collapse-item title="v-slot示例">
+        <VSlot></VSlot>
+      </el-collapse-item>
+      <el-collapse-item title="v-cloak示例">
+        <VCloak></VCloak>
+      </el-collapse-item>
     </el-collapse>
   </el-card>
 </template>
@@ -55,6 +79,11 @@ import VShow from '@/views/components-directive/VShow.vue';
 import VFor from '@/views/components-directive/VFor.vue';
 import VOnce from '@/views/components-directive/VOnce.vue';
 import VMemo from '@/views/components-directive/VMemo.vue';
+import VModel from '@/views/components-directive/VModel.vue';
+import VCloak from '@/views/components-directive/VCloak.vue';
+import VOn from '@/views/components-directive/VOn.vue';
+import VBind from '@/views/components-directive/VBind.vue';
+import VSlot from '@/views/components-directive/VSlot.vue';
 
 const directiveList = ref([
   'v-text',
@@ -74,7 +103,6 @@ const directiveList = ref([
   'v-cloak',
   'v-is',
 ] as string[]);
-const vHtml = ref('<h3>这是<span style="color: red;">v-html</span></h3>');
 
 const debounceText = ref(new Date().getTime());
 const click = () => (debounceText.value = new Date().getTime());
