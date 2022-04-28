@@ -26,6 +26,11 @@
     <el-button v-background="background" style="color: white" @click="changeBackground">
       这里是设置背景色指令：{{ background }}
     </el-button>
+    <el-button v-my-directive style="color: white">setup中局部注册自定义指令</el-button>
+    <p>
+      setup中局部注册自定义指令必须以 vNameOfDirective
+      的形式来命名本地自定义指令，以使得它们可以直接在模板中使用。
+    </p>
   </el-card>
 
   <el-card header="16个内置指令示例" style="margin-top: 10px">
@@ -71,7 +76,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, Directive } from 'vue';
 import VText from '@/views/components-directive/VText.vue';
 import VHtml from '@/views/components-directive/VHtml.vue';
 import VPre from '@/views/components-directive/VPre.vue';
@@ -84,6 +89,12 @@ import VCloak from '@/views/components-directive/VCloak.vue';
 import VOn from '@/views/components-directive/VOn.vue';
 import VBind from '@/views/components-directive/VBind.vue';
 import VSlot from '@/views/components-directive/VSlot.vue';
+
+const vMyDirective: Directive = {
+  mounted: (el) => {
+    el.style.background = 'red';
+  },
+};
 
 const directiveList = ref([
   'v-text',
