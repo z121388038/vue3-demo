@@ -3,6 +3,10 @@
     <el-tag v-for="tag in directiveList" :key="tag" style="margin-bottom: 5px; margin-right: 5px">{{
       tag
     }}</el-tag>
+    <ul>
+      <li>v-is: 已在 3.1.0 中被废弃。请换用带有 vue: 前缀的 is attribute。</li>
+      <li>v-memo: 3.2新增指令</li>
+    </ul>
   </el-card>
 
   <el-card style="margin-top: 10px">
@@ -28,27 +32,47 @@
       </li>
     </ul>
   </el-card>
+
+  <el-card header="16个内置指令示例" style="margin-top: 10px">
+    <el-collapse>
+      <el-collapse-item title="v-text示例"><VText></VText></el-collapse-item>
+      <el-collapse-item title="v-html示例"><VHtml></VHtml></el-collapse-item>
+      <el-collapse-item title="v-pre示例"><VPre></VPre></el-collapse-item>
+      <el-collapse-item title="v-show示例"><VShow></VShow></el-collapse-item>
+      <el-collapse-item title="v-for示例"><VFor></VFor></el-collapse-item>
+      <el-collapse-item title="v-once示例"><VOnce></VOnce></el-collapse-item>
+      <el-collapse-item title="v-mome示例"><VMemo></VMemo></el-collapse-item>
+    </el-collapse>
+  </el-card>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+import VText from '@/views/components-directive/VText.vue';
+import VHtml from '@/views/components-directive/VHtml.vue';
+import VPre from '@/views/components-directive/VPre.vue';
+import VShow from '@/views/components-directive/VShow.vue';
+import VFor from '@/views/components-directive/VFor.vue';
+import VOnce from '@/views/components-directive/VOnce.vue';
+import VMemo from '@/views/components-directive/VMemo.vue';
+
 const directiveList = ref([
+  'v-text',
+  'v-html',
+  'v-pre',
   'v-if',
   'v-else',
   'v-else-if',
   'v-show',
-  'v-bind',
-  'v-model',
   'v-for',
-  'v-slot',
-  'v-on',
-  'v-text',
-  'v-html',
-  'v-pre',
-  'v-is',
   'v-once',
   'v-memo',
+  'v-slot',
+  'v-on',
+  'v-bind',
+  'v-model',
   'v-cloak',
+  'v-is',
 ] as string[]);
 const vHtml = ref('<h3>这是<span style="color: red;">v-html</span></h3>');
 
