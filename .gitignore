@@ -26,3 +26,5 @@ pnpm-debug.log*
 *.sw?
 
 package-lock.json
+auto-imports.d.ts
+components.d.ts
