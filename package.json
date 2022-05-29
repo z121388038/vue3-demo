@@ -1,6 +1,7 @@
 {
   "name": "vue3-test",
   "version": "0.1.0",
+  "homepage": "https://z121388038.github.io/vue3-demo",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
