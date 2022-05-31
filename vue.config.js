@@ -4,6 +4,7 @@ const Components = require('unplugin-vue-components/webpack');
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers');
 
 module.exports = defineConfig({
+  publicPath: '/vue3-demo/',
   transpileDependencies: true,
   configureWebpack: {
     plugins: [
