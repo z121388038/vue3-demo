@@ -1,16 +1,67 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import Layout from '@/layout/Index.vue';
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: HomeView,
+    component: Layout,
+    redirect: '/home',
+    children: [
+      {
+        path: 'home',
+        name: 'home',
+        component: () => import('@/views/HomeView.vue'),
+      },
+    ],
+  },
+  {
+    path: '/test',
+    name: 'test',
+    component: Layout,
+    // redirect: '/test/test1',
+    children: [
+      {
+        path: 'test1',
+        name: 'test1',
+        component: () => import('@/views/test/Test1.vue'),
+      },
+      {
+        path: 'test2',
+        name: 'test2',
+        component: () => import('@/views/test/Test2.vue'),
+      },
+      {
+        path: 'test3',
+        name: 'test3',
+        component: () => import('@/views/test/Test3.vue'),
+        // redirect: '/test/test3/a31',
+        // children: [
+        //   {
+        //     path: 'a31',
+        //     name: 'test3-1',
+        //     component: () => import('@/views/test/Test3-1.vue'),
+        //   },
+        //   {
+        //     path: 'a32',
+        //     name: 'test3-2',
+        //     component: () => import('@/views/test/Test3-1.vue'),
+        //   },
+        // ],
+      },
+    ],
   },
   {
     path: '/about',
     name: 'about',
-    component: () => import('../views/AboutView.vue'),
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'about',
+        component: () => import('../views/AboutView.vue'),
+      },
+    ],
   },
   {
     path: '/component-info',
@@ -41,15 +92,16 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes: routes.map((item) => {
-    if (item.children) {
-      item.children.map((item2) => {
-        item2.path = `${item.path}${item2.path}`;
-        return item2;
-      });
-    }
-    return item;
-  }),
+  routes,
+  // routes: routes.map((item) => {
+  //   if (item.children) {
+  //     item.children.map((item2) => {
+  //       item2.path = `${item.path}${item2.path}`;
+  //       return item2;
+  //     });
+  //   }
+  //   return item;
+  // }),
 });
 
 export default router;
