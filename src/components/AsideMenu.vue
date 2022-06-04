@@ -29,30 +29,16 @@
         </el-menu-item>
       </template>
     </el-menu>
-    <GlobalAuthor class="author"></GlobalAuthor>
+    <Author class="author"></Author>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
+import { useRouter } from 'vue-router';
+import Author from '@/components/global/Author.vue';
+const router = useRouter();
 
-interface DefaultData {
-  routeList: object[];
-}
-
-export default defineComponent({
-  name: 'AsideMenu',
-  data(): DefaultData {
-    return {
-      routeList: [],
-    };
-  },
-  methods: {
-    goNext(path: string) {
-      this.$router.push(path);
-    },
-  },
-});
+const goNext = (path: string) => router.push(path);
 </script>
 
 <style scoped>

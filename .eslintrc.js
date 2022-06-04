@@ -18,7 +18,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/multi-word-component-names': 'off',
     'vue/comment-directive': 'off',
-    'prettier/prettier': ['error', { singleQuote: true, printWidth: 100 }],
+    'prettier/prettier': ['error', { singleQuote: true, printWidth: 100, endOfLine: 'auto' }],
     '@typescript-eslint/no-explicit-any': 'off',
     'vue/singleline-html-element-content-newline': 0,
   },

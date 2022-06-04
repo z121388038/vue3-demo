@@ -11,13 +11,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
 import AsideMenu from '@/components/AsideMenu.vue';
-
-export default defineComponent({
-  components: { AsideMenu },
-});
 </script>
 
 <style lang="scss">
