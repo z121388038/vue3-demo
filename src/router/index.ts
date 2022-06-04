@@ -32,6 +32,11 @@ const routes: Array<RouteRecordRaw> = [
     name: '自定义指令',
     component: () => import('@/views/Directive.vue'),
   },
+  {
+    path: '/reactive',
+    name: '响应式Api',
+    component: () => import('@/views/reactive-api/Index.vue'),
+  },
 ];
 
 const router = createRouter({
