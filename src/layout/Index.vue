@@ -1,11 +1,11 @@
 <template>
   <div class="common-layout">
     <div class="aside-wrap">
-      <AsideMenu></AsideMenu>
+      <SideMenu></SideMenu>
+      <Author></Author>
     </div>
     <div class="main-wrap">
       <div class="main" style="display: flex">
-        <SideMenu></SideMenu>
         <router-view />
       </div>
     </div>
@@ -13,8 +13,8 @@
 </template>
 
 <script lang="ts" setup>
-import AsideMenu from '@/components/AsideMenu.vue';
 import SideMenu from '@/layout/components/SideMenu.vue';
+import Author from '@/layout/components/Author.vue';
 </script>
 
 <style lang="scss">

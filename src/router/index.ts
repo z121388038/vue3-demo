@@ -19,7 +19,8 @@ export const routes: Array<RouteRecordRaw> = [
     path: '/test',
     name: 'test',
     component: Layout,
-    // redirect: '/test/test1',
+    // redirect: 'noredirect',
+    redirect: '/test/test1',
     children: [
       {
         path: 'test1',
@@ -35,19 +36,18 @@ export const routes: Array<RouteRecordRaw> = [
         path: 'test3',
         name: 'test3',
         component: () => import('@/views/test/Test3.vue'),
-        // redirect: '/test/test3/a31',
-        // children: [
-        //   {
-        //     path: 'a31',
-        //     name: 'test3-1',
-        //     component: () => import('@/views/test/Test3-1.vue'),
-        //   },
-        //   {
-        //     path: 'a32',
-        //     name: 'test3-2',
-        //     component: () => import('@/views/test/Test3-1.vue'),
-        //   },
-        // ],
+        children: [
+          {
+            path: 'test3-1',
+            name: 'test3-1',
+            component: () => import('@/views/test/Test3-1.vue'),
+          },
+          {
+            path: 'test3-2',
+            name: 'test3-2',
+            component: () => import('@/views/test/Test3-2.vue'),
+          },
+        ],
       },
     ],
   },

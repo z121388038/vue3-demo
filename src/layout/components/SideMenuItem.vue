@@ -8,7 +8,7 @@
     <SideMenuItem v-for="child in item.children" :key="child.path" :item="child"></SideMenuItem>
   </el-sub-menu>
 
-  <el-menu-item :index="getResolvePath(item.path)" v-else>
+  <el-menu-item :index="getResolvePath(item)" v-else @click="$router.push(getResolvePath(item))">
     <el-icon v-if="showIcon"><setting /></el-icon>
     <span>{{ item.name }}</span>
   </el-menu-item>
@@ -63,7 +63,8 @@ const props = withDefaults(defineProps<{ item: RouteRecordRaw; showIcon?: boolea
 // 是否渲染子级
 const isShowChildren = computed(() => (props.item.children || []).length > 1);
 
-const getResolvePath = (path: string) => router.resolve(path).href;
+// 转换成标准的url地址
+const getResolvePath = (routeItem: RouteRecordRaw) => router.resolve(routeItem).fullPath;
 </script>
 
 <style scoped lang="scss"></style>
