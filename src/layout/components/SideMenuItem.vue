@@ -1,7 +1,7 @@
 <template>
   <el-sub-menu :index="item.path" v-if="isShowChildren">
     <template #title>
-      <el-icon v-if="showIcon"><setting /></el-icon>
+      <!--      <el-icon v-if="showIcon"><setting /></el-icon>-->
       <span>{{ item.name }}</span>
     </template>
 
@@ -9,7 +9,7 @@
   </el-sub-menu>
 
   <el-menu-item :index="getResolvePath(item)" v-else @click="goNext(item)">
-    <el-icon v-if="showIcon"><setting /></el-icon>
+    <!--    <el-icon v-if="showIcon"><setting /></el-icon>-->
     <span>{{ item.name }}</span>
   </el-menu-item>
 </template>
