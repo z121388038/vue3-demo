@@ -61,6 +61,16 @@ export const routes: Array<RouteRecordRaw> = [
         name: '响应式Api',
         component: () => import('@/views/reactive-api/Index.vue'),
       },
+      {
+        path: 'watchEffect',
+        name: 'watchEffect',
+        component: () => import('@/views/reactive-api/WatchEffect.vue'),
+      },
+      {
+        path: 'watch',
+        name: 'watch',
+        component: () => import('@/views/reactive-api/Watch.vue'),
+      },
     ],
   },
   {
