@@ -62,6 +62,11 @@ export const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/reactive-api/Index.vue'),
       },
       {
+        path: 'reactive',
+        name: 'reactive',
+        component: () => import('@/views/reactive-api/Reactive.vue'),
+      },
+      {
         path: 'watchEffect',
         name: 'watchEffect',
         component: () => import('@/views/reactive-api/WatchEffect.vue'),
