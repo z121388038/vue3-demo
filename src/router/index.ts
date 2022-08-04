@@ -84,6 +84,18 @@ export const routes: Array<RouteRecordRaw> = [
     ],
   },
   {
+    path: '/ref',
+    name: 'Refs',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'Refs',
+        component: () => import('@/views/ref/Index.vue'),
+      },
+    ],
+  },
+  {
     path: '/life-cycle',
     name: '生命周期',
     component: Layout,
