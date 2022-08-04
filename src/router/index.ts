@@ -67,6 +67,11 @@ export const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/reactive-api/Reactive.vue'),
       },
       {
+        path: 'readonly',
+        name: 'readonly',
+        component: () => import('@/views/reactive-api/Readonly.vue'),
+      },
+      {
         path: 'watchEffect',
         name: 'watchEffect',
         component: () => import('@/views/reactive-api/WatchEffect.vue'),
